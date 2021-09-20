@@ -14,11 +14,21 @@
             }
         }
 
-        for(i=0; i < 3; i++) {
+        for(i=0; i <3; i++) {
             newName = prompt(`insert ${i+1} name: `);
             names[i] = newName;
         }
         names.showArray();
+        document.write("<br />Sorted array<br />");
+        names.sort();
+        names.showArray();
+        document.write("<br />After using .pop()</br />");
+        names.pop();
+        names.showArray();
+        document.write("<br />After using .push(\"\pushed item\"\)<br />");
+        names.push("pushed items");
+        names.showArray();
+
     </script>
 </head>
 <body>
