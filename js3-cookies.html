@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-cookies</title>
+    <script>
+        function createCookie(cookieName, cookieValue, daysLeft) {
+            var date = new Date();
+            date.setTime(date.getTime() + (daysLeft*24*60*60*1000));
+            document.cookie = cookieName + "=" + cookieValue + "; expires=" + date.toString();
+        }
+
+        function accessCookie(cookieName) {
+            var name = cookieName + "=";
+            document.write(`<br />${name}<br />`);
+            var allCookieArray = document.cookie.split(';');
+            document.write(`<br />${allCookieArray}<br />`);
+            for (var i = 0; i < allCookieArray.length; i++) {
+                var temp = allCookieArray[i].trim();
+                document.write(`<br />${temp}<br />`);
+                if (temp.indexOf(name)==0){
+                    return temp.substring(name.length, temp.length);
+                }
+                return "";
+            }
+        }
+        function checkCookie() {
+            var user = accessCookie("testCookie");
+            if (user!=""){
+                alert("Welcome back "+ user +" !");
+            } else {
+                user = prompt("Please enter your name ...");
+                num = prompt("How many days left do you want to use the cookie setting?");
+                if (user != "" && user != null) {
+                    createCookie("testCookie", user, num);
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+    
+</body>
+</html>
