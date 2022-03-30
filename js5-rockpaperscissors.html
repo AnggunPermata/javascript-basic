@@ -1,0 +1,37 @@
+<script>
+    game_object = ['rock', 'paper', 'scissors'];
+    UserChoice = prompt("choose between 'rock', 'paper', and 'scissors'");
+    compChoice = Math.floor(Math.random() * 2);
+    CompChoice = game_object[compChoice];
+
+    switch(UserChoice.toLowerCase()){
+        case "rock": 
+            userChoice = 0;
+            break;
+        case "paper":
+            userChoice = 1;
+            break;
+        case "scissors":
+            userChoice = 2;
+            break;
+        default:
+            userChoice = 3;
+    };
+
+    if (userChoice > 2) {
+        console.log("wrong input!");
+    } else if (userChoice == compChoice) {
+        window.alert("TIE!!");
+    } else if (userChoice == 0 && compChoice == 2 || userChoice == 2 && compChoice == 0) {
+        if (userChoice == 0) {
+            window.alert("USER'S WIN!!!");
+        } else {
+            window.alert("COMPUTER'S WIN!!!");
+        }
+    } else if (userChoice > compChoice){
+        window.alert("USER'S WIN!!!");
+    } else {
+        window.alert("COMPUTER'S WIN!!!");
+    }
+
+</script>
