@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 8</title>
+</head>
+<body>
+    <script>
+        function message(el){
+          console.dir(el);
+        }
+        
+        function toggleDisplay(){
+            let p = document.getElementById("magic");
+            if (p.style.display === "none"){
+                p.style.display = "block";
+            } else {
+                p.style.display = "none";
+            }
+        }
+      </script>
+    <div class="button-click">
+        <p>Using onclick to show dir on console</p>
+        <button onclick="message(this)">Button 1</button>
+        <button onclick="message(this)">Button 2</button>
+    </div>
+    <div class="toggle">
+        <p id="magic" style="display: none;">using onclick to show or hide items when button clicked</p>
+        <button onclick="toggleDisplay()">magic button</button>
+    </div>
+    
+</body>
+</html>
