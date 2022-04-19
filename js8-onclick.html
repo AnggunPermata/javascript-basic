@@ -20,6 +20,13 @@
                 p.style.display = "none";
             }
         }
+        function rainbow(){
+            let divs = document.getElementsByTagName("div");
+            for(let i = 0; i < divs.length; i++) {
+                divs[i].style.backgroundColor = divs[i].id;
+                divs[i].style.display = "block";
+            }
+        }
       </script>
     <div class="button-click">
         <p>Using onclick to show dir on console</p>
@@ -30,6 +37,24 @@
         <p id="magic" style="display: none;">using onclick to show or hide items when button clicked</p>
         <button onclick="toggleDisplay()">magic button</button>
     </div>
-    
+    <style>
+        div .rainbow-color{
+          height: 30px;
+          width: 30px;
+          background-color: white;
+          display: none;
+        }
+      </style>
+    <div class="produce-rainbow">
+        <p>producing rainbow when button is clicked:</p>
+        <div id="red" class="rainbow-color"></div>
+        <div id="orange" class="rainbow-color"></div>
+        <div id="yellow" class="rainbow-color"></div>
+        <div id="green" class="rainbow-color"></div>
+        <div id="blue" class="rainbow-color"></div>
+        <div id="indigo" class="rainbow-color"></div>
+        <div id="violet" class="rainbow-color"></div>
+        <button onclick="rainbow()">produce rainbow</button>
+    </div>
 </body>
 </html>
