@@ -4,29 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS9</title>
+    <title>JS-10</title>
 </head>
 <body>
     <script>
-        function change(){
-            document.getElementById("shape").classList.add("yellow")
+        function changeVisibility() {
+            document.getElementById("shape").classList.toggle("hide");
         }
     </script>
     <style>
         .square {
             height: 100px;
             width: 100px;
-            background-color: gray;
+            background-color: aqua;
         }
-        .blue {
-            background-color: blue;
-        }
-        .yellow {
-            background-color: yellow;
+        .hide {
+            display: none;
         }
     </style>
-    <div id="shape" class="square blue"></div>
-    <button onclick="change()">Change!</button>
-
+    
+    <div id="shape" class="square"></div>
+    <button onclick="changeVisibility()">Hide Me!</button>
 </body>
 </html>
